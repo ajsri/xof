@@ -16,7 +16,6 @@ import MainApp from "./containers/Main"
 
 const logger = createLogger()
 const store = createStore(mainReducer, applyMiddleware(thunk, promise, logger))
-console.log(store)
 
 ReactDOM.render(<Provider store={store}>
                   <Router history={hashHistory}>
