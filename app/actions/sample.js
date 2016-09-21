@@ -3,3 +3,11 @@ export const sampleAction = () => {
     type: "SAMPLE_ACTION"
   }
 }
+
+export const sampleActionThunk = () => {
+  return dispatch => {
+    dispatch({
+      type: "SAMPLE_ACTION"
+    })
+  }
+}

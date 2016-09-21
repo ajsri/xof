@@ -9,6 +9,7 @@ class Main extends Component{
     this.navItems = [
       {name: "X.O.F.", link: null},
       {name: "Getting Started", link: "/"},
+      {name: "Patterns", link: "#"},
       {name: "About", link: "about"}
     ]
   }
