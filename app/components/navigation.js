@@ -20,7 +20,10 @@ class Navigation extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ul className="nav navbar-nav">
+              <ul className="nav navbar-nav xof-nav">
+                <li className="navbar-brand">
+                  <img src="./img/logo.png" className="brand-logo"/>
+                </li>
                 {this.props.navItems.map((navItem, i) => {
                   return(
                     <li key={i} className="nav-item">

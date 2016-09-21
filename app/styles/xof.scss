@@ -16,7 +16,7 @@ $primaryLight: $x1904green;
 $primaryDark: $x1904darkgrey;
 $primaryText: $x1904copygrey;
 
-$huge: 60px;
+$huge: 70px;
 $large: 20px;
 $small: 5px;
 
@@ -39,8 +39,14 @@ a {
 .xof-nav-link {
   color: $primaryLight;
 }
+.xof-nav {
+  line-height: 42px;
+}
 
 //GENERICS - MARGIN/PADDING
+.brand-logo {
+  max-height: 30px;
+}
 .m-main-container {
   margin-top: $huge;
 }
