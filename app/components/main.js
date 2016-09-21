@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 
 import Navigation from "./navigation"
+import Footer from "./footer"
 
 class Main extends Component{
   constructor(props){
@@ -21,6 +22,7 @@ class Main extends Component{
       <div>
         <Navigation navItems={this.navItems} />
         {this.props.children}
+        <Footer />
       </div>
     )
   }

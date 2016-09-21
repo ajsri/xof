@@ -9,13 +9,14 @@ $x1904grey: #000; //replace this
 $x1904copygrey: #444;
 $x1904darkgrey: #333;
 $foxgold: #ffd200;
+$white: #fff;
 
 //PALETTE DEFINITIONS
 $primaryLight: $x1904green;
 $primaryDark: $x1904darkgrey;
 $primaryText: $x1904copygrey;
 
-$huge: 45px;
+$huge: 60px;
 $large: 20px;
 $small: 5px;
 
@@ -41,11 +42,24 @@ a, h1, h2, h3, h4, h5 {
   margin-top: $large;
 }
 
+.text-center{
+  text-align: center;
+  display: inline-block;
+}
 //GENERICS - LAYOUT
 .inline {
   display: inline-block;
 }
 
+.xof-footer {
+  background: $x1904darkgrey;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  color: $white;
+}
 //ANIMATIONS
 .spin {
   background: $foxgold;
