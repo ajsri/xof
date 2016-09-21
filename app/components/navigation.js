@@ -16,32 +16,38 @@ class Navigation extends Component {
 
   render(){
     return(
-      <nav className="navbar navbar-dark bg-inverse">
-        <ul className="nav navbar-nav">
-          {this.props.navItems.map((navItem, i) => {
-            return(
-              <li key={i} className="nav-item">
-                <Link to={navItem.link}
-                   className={navItem.dropdown ? "dropdown-toggle" : ""}
-                   id={navItem.name}
-                   data-toggle="dropdown"
-                   aria-haspopup="true"
-                   aria-expanded="false">
-                    {navItem.name}
-                </Link>
-                {navItem.dropdown &&
-                  <div className="dropdown-menu" aria-labelledby={navItem.name}>
-                    {navItem.items.map((subItem, i) => {
-                      return(
-                        <a className="dropdown-item" key={i}>{subItem.name}</a>
-                      )
-                    })}
-                  </div>
-                }
-              </li>
-            )
-          })}
-        </ul>
+      <nav className="navbar navbar-dark bg-inverse navbar-static navbar-fixed-top">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <ul className="nav navbar-nav">
+                {this.props.navItems.map((navItem, i) => {
+                  return(
+                    <li key={i} className="nav-item">
+                      <Link to={navItem.link}
+                         className={navItem.dropdown ? "dropdown-toggle" : "xof-nav-link"}
+                         id={navItem.name}
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false">
+                          {navItem.name}
+                      </Link>
+                      {navItem.dropdown &&
+                        <div className="dropdown-menu" aria-labelledby={navItem.name}>
+                          {navItem.items.map((subItem, i) => {
+                            return(
+                              <a className="dropdown-item" key={i}>{subItem.name}</a>
+                            )
+                          })}
+                        </div>
+                      }
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
       </nav>
     )
   }

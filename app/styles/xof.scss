@@ -3,26 +3,57 @@ Primary sass file for X.O.F. Patterns
 Will eventually have things in it
 */
 
+//COLOR DEFINITIONS
+$x1904green: #92c84c;
+$x1904grey: #000; //replace this
+$x1904copygrey: #444;
+$x1904darkgrey: #333;
 $foxgold: #ffd200;
 
+//PALETTE DEFINITIONS
+$primaryLight: $x1904green;
+$primaryDark: $x1904darkgrey;
+$primaryText: $x1904copygrey;
+
+$huge: 45px;
 $large: 20px;
 $small: 5px;
 
+
+//TYPOGRAPHY
+p{
+  color: $primaryText;
+}
+
+a, h1, h2, h3, h4, h5 {
+  color: $primaryLight;
+}
+//NAVIGATION
+.xof-nav-link {
+  color: $primaryLight;
+}
+
+//GENERICS - MARGIN/PADDING
+.m-main-container {
+  margin-top: $huge;
+}
 .m-t-lg {
   margin-top: $large;
 }
 
+//GENERICS - LAYOUT
+.inline {
+  display: inline-block;
+}
+
+//ANIMATIONS
 .spin {
   background: $foxgold;
   animation: spin 3s infinite linear;
 }
 
-.inline {
-  display: inline-block;
-}
-
-//keyframes
-//360 NOSCOPE
+//KEYFRAMES
+//SPIN 360
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
