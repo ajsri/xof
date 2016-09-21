@@ -14,6 +14,8 @@ import mainReducer from "./reducers"
 
 import MainApp from "./containers/Main"
 
+import "./styles/xof.scss"
+
 const logger = createLogger()
 const store = createStore(mainReducer, applyMiddleware(thunk, promise, logger))
 
