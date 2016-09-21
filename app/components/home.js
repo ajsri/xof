@@ -1,10 +1,12 @@
 import React, { Component } from "react"
+import SampleRestCall from "./sampleRestCall"
 
 class Home extends Component {
   constructor(props) {
     super(props)
   }
   render(){
+    console.log(this.props)
     return (
       <div>
         <div className="container m-main-container">
@@ -19,14 +21,17 @@ class Home extends Component {
           <div className="row">
             <div className="col-md-12">
               <h4>Upcoming Features</h4>
-              <p>
-                <ul>
-                  <li>Additional grid options using flex and fallback</li>
-                  <li>Brand guidelines and style guide</li>
-                  <li>Patterns for reusable components</li>
-                  <li>Sample pages</li>
-                </ul>
-              </p>
+              <ul>
+                <li>Additional grid options using flex and fallback</li>
+                <li>Brand guidelines and style guide</li>
+                <li>Patterns for reusable components</li>
+                <li>Sample pages</li>
+              </ul>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <SampleRestCall actionSent={false}/>
             </div>
           </div>
         </div>
