@@ -11,7 +11,7 @@ class Main extends Component{
 
   render(){
     return(
-      <div>xof redux</div>
+      <div>xof redux real time</div>
     )
   }
 }
