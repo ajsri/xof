@@ -15,6 +15,10 @@ class Home extends Component {
             <p><small><em>Eventually...</em></small></p>
           </div>
         </div>
+        <div className="row">
+          <div className="col-md-12">
+          </div>
+        </div>
       </div>
     )
   }
