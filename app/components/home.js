@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import LoadingIcon from "./util/loadingIcon"
 
 class Home extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Home extends Component {
         </div>
         <div className="row">
           <div className="col-md-12">
+            <LoadingIcon />
           </div>
         </div>
       </div>
