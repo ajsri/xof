@@ -1,5 +1,13 @@
-$primary: #ffd200;
+/*
+Primary sass file for X.O.F. Patterns
+Will eventually have things in it
+*/
 
-.wubbalubbadubdub{
-  background: $primary;
+$foxgold: #ffd200;
+
+$large: 20px;
+$small: 5px;
+
+.m-t-lg {
+  margin-top: $large;
 }
