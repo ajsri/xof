@@ -29,6 +29,12 @@ p{
 a, h1, h2, h3, h4, h5 {
   color: $primaryLight;
 }
+
+a {
+  &:hover {
+    color: $primaryLight;
+  }
+}
 //NAVIGATION
 .xof-nav-link {
   color: $primaryLight;
