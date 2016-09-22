@@ -13,7 +13,8 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    main: state.main
+    main: state.main,
+    sample: state.sample
   }
 }
 

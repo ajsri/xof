@@ -21,10 +21,13 @@ export const sampleRestCall = (name) => {
     })
     axios.post("/test", {name})
       .then((response) => {
-        dispatch({
-          type: "SAMPLE_REST_CALL_SUCCESS",
-          message: response.data.response
-        })
+        setTimeout(() => {
+          dispatch({
+            type: "SAMPLE_REST_CALL_SUCCESS",
+            message: response.data.response
+          })
+        }, 5000)
+
       })
       .catch((error) => {
         dispatch({

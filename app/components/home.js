@@ -1,9 +1,15 @@
 import React, { Component } from "react"
 import SampleRestCall from "./sampleRestCall"
+import LoadingIcon from "./util/loadingIcon"
 
 class Home extends Component {
   constructor(props) {
     super(props)
+  }
+
+  sampleRestCall(){
+    $("#modal").modal("show")
+    this.props.sampleRestCall("AJ")
   }
 
   render(){
@@ -20,7 +26,7 @@ class Home extends Component {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <h4>Upcoming Features</h4>
+              <h4 onClick={() => this.showModal()}>Upcoming Features</h4>
               <ul>
                 <li>Additional grid options using flex and fallback</li>
                 <li>Brand guidelines and style guide</li>
@@ -32,7 +38,19 @@ class Home extends Component {
           <div className="row">
             <div className="col-md-4">
               <SampleRestCall actionSent={false}
-                              sendSampleAction={this.props.sampleRestCall}/>
+                              sendSampleAction={this.sampleRestCall.bind(this)}/>
+            </div>
+          </div>
+        </div>
+        <div id="modal" className="modal fade">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-body">
+                {this.props.sample.loadingRestCall &&
+                  <LoadingIcon />
+                }
+                {this.props.sample && this.props.sample.message}
+              </div>
             </div>
           </div>
         </div>

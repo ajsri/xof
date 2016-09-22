@@ -1,4 +1,4 @@
-export const sample = (state = null, action) => {
+export const sample = (state = {}, action) => {
   switch(action.type) {
     case "REQUEST_SAMPLE_REST_CALL":
       return Object.assign({}, state, {

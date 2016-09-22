@@ -4,7 +4,8 @@ import { sampleRestCall } from "../actions/sample"
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    main: state.main
+    main: state.main,
+    sample: state.sample
   }
 }
 
