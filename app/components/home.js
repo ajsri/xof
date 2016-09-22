@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import SampleRestCall from "./sampleRestCall"
 import LoadingIcon from "./util/loadingIcon"
+import Slider from "./forms/slider"
 
 class Home extends Component {
   constructor(props) {
@@ -39,6 +40,8 @@ class Home extends Component {
             <div className="col-md-4">
               <SampleRestCall actionSent={false}
                               sendSampleAction={this.sampleRestCall.bind(this)}/>
+            </div>
+            <div className="col-md-4">
             </div>
           </div>
         </div>
