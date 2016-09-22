@@ -7,14 +7,14 @@ class About extends Component {
 
   render(){
     return(
-      <div className="container m-t-lg">
+      <div className="container m-main-container">
         <div className="row">
           <div className="col-md-12">
             <p>Placeholder for actual About page</p>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-4">
             <h3>Team Members</h3>
             <ul>
               <li>A.J. Srivastava</li>
@@ -25,11 +25,11 @@ class About extends Component {
               <li>John Royle</li>
             </ul>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <h3>Company</h3>
             <p>1904Labs bio will go here</p>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <h3>Influences</h3>
           </div>
         </div>
