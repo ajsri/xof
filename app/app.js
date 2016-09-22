@@ -13,7 +13,7 @@ import { Router, Route, hashHistory, Link, IndexRoute } from "react-router"
 import mainReducer from "./reducers"
 
 import MainApp from "./containers/Main"
-import Home from "./components/home"
+import Home from "./containers/home"
 import About from "./components/about"
 
 import "./styles/xof.scss"

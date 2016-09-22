@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 import Main from "../components/main"
 
-import { sampleAction } from "../actions/sample"
+import { sampleAction, sampleRestCall } from "../actions/sample"
 
 const mapDispatchToProps = (dispatch) => {
   return {

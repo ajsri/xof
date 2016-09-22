@@ -5,8 +5,8 @@ class Home extends Component {
   constructor(props) {
     super(props)
   }
+
   render(){
-    console.log(this.props)
     return (
       <div>
         <div className="container m-main-container">
@@ -31,7 +31,8 @@ class Home extends Component {
           </div>
           <div className="row">
             <div className="col-md-4">
-              <SampleRestCall actionSent={false}/>
+              <SampleRestCall actionSent={false}
+                              sendSampleAction={this.props.sampleRestCall}/>
             </div>
           </div>
         </div>

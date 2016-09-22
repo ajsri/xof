@@ -15,7 +15,7 @@ class Main extends Component{
   }
 
   componentDidMount(){
-    this.props.sampleAction()
+    //this.props.sampleAction()
   }
 
   render(){

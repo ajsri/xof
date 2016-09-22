@@ -22,7 +22,7 @@ class Navigation extends Component {
             <div className="col-md-12">
               <ul className="nav navbar-nav xof-nav">
                 <li className="navbar-brand">
-                  <img src="./img/logo.png" className="brand-logo"/>
+                  <img src="./img/logo.png" alt="I love you Ducky Butt!!!" className="brand-logo"/>
                 </li>
                 {this.props.navItems.map((navItem, i) => {
                   return(

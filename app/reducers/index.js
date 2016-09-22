@@ -1,6 +1,7 @@
 import { combineReducers } from "redux"
 import { syncHistoryWithStore, routerReducer } from "react-router-redux"
 
+import { sample } from "./sample"
 
 const main = (state = null, action) => {
   switch(action.type){
@@ -15,6 +16,7 @@ const main = (state = null, action) => {
 
 const mainReducer = combineReducers({
   main,
+  sample,
   routing: routerReducer
 })
 
