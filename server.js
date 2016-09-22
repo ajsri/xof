@@ -34,7 +34,7 @@ app.get("/*", function(req, res){
 app.post("/test", function(req, res){
   var name = req.body.name
   res.json({
-    response: "Man" + ", I can't believe you took orders from a button..."
+    response: name + ", I can't believe you took orders from a button..."
   })
 })
 

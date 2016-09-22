@@ -6,11 +6,14 @@ import Slider from "./forms/slider"
 class Home extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      name: null
+    }
   }
 
   sampleRestCall(){
     $("#modal").modal("show")
-    this.props.sampleRestCall("AJ")
+    this.props.sampleRestCall(this.state.name)
   }
 
   render(){
@@ -39,9 +42,24 @@ class Home extends Component {
           <div className="row">
             <div className="col-md-4">
               <SampleRestCall actionSent={false}
+                              disabled={!this.state.name}
                               sendSampleAction={this.sampleRestCall.bind(this)}/>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-8">
+              <div className="card">
+                <div className="card-block">
+                  <div className="card-title">
+                    <label htmlFor="name-input">Name</label>
+                    <input type="text"
+                           id="name-input"
+                           className="form-control"
+                           onChange={(e) => this.setState({name: e.target. value})}/>
+                    {this.state.name &&
+                    <p>Hi {this.state.name}, welcome to the X.O.F. homepage! Try clicking that button to the left!</p>
+                    }
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
