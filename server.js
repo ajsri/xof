@@ -58,7 +58,19 @@ app.get("/users", (req, res) => {
     }
   })
 })
-
+app.get("/members", (req, res) => {
+  mongoClient.connect(mongoUrl, (err, db) => {
+    if(err){
+      throw err;
+    }
+    else{
+      let users = db.collection("members").find().toArray((err, docs) => {
+        res.json(docs);
+        db.close()
+      });
+    }
+  })
+})
 app.post("/users", (req, res) => {
   if(!req.body.name){
     res.json({
