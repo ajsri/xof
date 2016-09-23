@@ -36,3 +36,26 @@ export const sampleRestCall = (name) => {
       })
   }
 }
+
+export const getTeamMembers = () => {
+  return dispatch => {
+    dispatch({
+      type: "REQUEST_TEAM_MEMBERS"
+    })
+    axios.get("/users")
+      .then((response) => {
+        setTimeout(() => {
+          dispatch({
+            type: "RECEIVE_TEAM_MEMBERS",
+            team: response.data
+          })
+        }, 3000)
+      })
+      .catch((error) => {
+        dispatch({
+          type: "TEAM_MEMBERS_ERROR",
+          error: error.data
+        })
+      })
+  }
+}

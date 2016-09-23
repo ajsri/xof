@@ -14,7 +14,7 @@ import mainReducer from "./reducers"
 
 import MainApp from "./containers/Main"
 import Home from "./containers/home"
-import About from "./components/about"
+import About from "./containers/about"
 
 import "./styles/xof.scss"
 

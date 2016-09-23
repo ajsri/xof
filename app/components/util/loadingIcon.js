@@ -7,7 +7,7 @@ class LoadingIcon extends Component {
 
   render(){
     return(
-      <span className="spin inline">loading</span>
+      <span className="spin material-icons">cached</span>
     )
   }
 }
