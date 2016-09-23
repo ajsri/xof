@@ -1,5 +1,5 @@
-var express = require("express");
-var webpack = require("webpack");
+import express from "express"
+import webpack from "webpack"
 
 var config = require("./webpack.config.js");
 var compiler = webpack(config);
@@ -34,24 +34,24 @@ app.use(webpackHotMiddleware(compiler, {
 
 app.use(express.static("public"));
 
-app.get("/", function(req, res){
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html")
 })
 
-app.post("/test", function(req, res){
-  var name = req.body.name
+app.post("/test", (req, res) => {
+  let name = req.body.name
   res.json({
     response: name + ", I can't believe you took orders from a button..."
   })
 })
 
-app.get("/users", function(req, res){
-  mongoClient.connect(mongoUrl, function(err, db){
+app.get("/users", (req, res) => {
+  mongoClient.connect(mongoUrl, (err, db) => {
     if(err){
       throw err;
     }
     else{
-      var users = db.collection("users").find().toArray(function(err, docs){
+      let users = db.collection("users").find().toArray((err, docs) => {
         res.send(docs);
         db.close()
       });
@@ -59,19 +59,19 @@ app.get("/users", function(req, res){
   })
 })
 
-app.post("/users", function(req, res){
+app.post("/users", (req, res) => {
   if(!req.body.name){
     res.json({
       error: "no name defined"
     })
   }
   else{
-    mongoClient.connect(mongoUrl, function(err, db){
+    mongoClient.connect(mongoUrl, (err, db) => {
       if(err) {
         throw err;
       }
       else{
-        db.collection("users").insert({name: req.body.name}, function(err, docs){
+        db.collection("users").insert({name: req.body.name}, (err, docs) => {
           res.json({
             message: "user " + req.body.name + " successfully added"
           })
@@ -81,6 +81,6 @@ app.post("/users", function(req, res){
   }
 })
 
-app.listen(3788, function(){
-  console.log("listening on 3788");
+app.listen(3788, () => {
+  console.log("listening on 3788")
 })
