@@ -1,6 +1,5 @@
-import express from "express"
-import webpack from "webpack"
-
+var express = require("express");
+var webpack = require("webpack");
 var config = require("./webpack.config.js");
 var compiler = webpack(config);
 
@@ -34,56 +33,56 @@ app.use(webpackHotMiddleware(compiler, {
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
+app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/index.html")
 })
 
-app.post("/test", (req, res) => {
-  let name = req.body.name
+app.post("/test", function (req, res) {
+  var name = req.body.name
   res.json({
     response: name + ", I can't believe you took orders from a button..."
   })
 })
 
-app.get("/users", (req, res) => {
-  mongoClient.connect(mongoUrl, (err, db) => {
+app.get("/users", function(req, res) {
+  mongoClient.connect(mongoUrl, function(err, db) {
     if(err){
       throw err;
     }
     else{
-      let users = db.collection("users").find().toArray((err, docs) => {
+      var users = db.collection("users").find().toArray(function(err, docs) {
         res.send(docs);
         db.close()
       });
     }
   })
 })
-app.get("/members", (req, res) => {
-  mongoClient.connect(mongoUrl, (err, db) => {
+app.get("/members", function(req, res) {
+  mongoClient.connect(mongoUrl, function(err, db) {
     if(err){
       throw err;
     }
     else{
-      let users = db.collection("members").find().toArray((err, docs) => {
+      var users = db.collection("members").find().toArray(function(err, docs) {
         res.json(docs);
         db.close()
       });
     }
   })
 })
-app.post("/users", (req, res) => {
+app.post("/users", function(req, res) {
   if(!req.body.name){
     res.json({
       error: "no name defined"
     })
   }
   else{
-    mongoClient.connect(mongoUrl, (err, db) => {
+    mongoClient.connect(mongoUrl, function(err, db) {
       if(err) {
         throw err;
       }
       else{
-        db.collection("users").insert({name: req.body.name}, (err, docs) => {
+        db.collection("users").insert({name: req.body.name}, function(err, docs) {
           res.json({
             message: "user " + req.body.name + " successfully added"
           })
@@ -93,6 +92,6 @@ app.post("/users", (req, res) => {
   }
 })
 
-app.listen(3788, () => {
+app.listen(3788, function() {
   console.log("listening on 3788")
 })

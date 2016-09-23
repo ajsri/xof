@@ -13,8 +13,9 @@ import { Router, Route, hashHistory, Link, IndexRoute } from "react-router"
 import mainReducer from "./reducers"
 
 import MainApp from "./containers/Main"
-import Home from "./containers/home"
-import About from "./containers/about"
+import Home from "./containers/Home"
+import About from "./containers/About"
+import ListView from "./containers/ListView"
 
 import "./styles/xof.scss"
 
@@ -26,6 +27,7 @@ ReactDOM.render(<Provider store={store}>
                     <Route path="/" component={MainApp}>
                       <IndexRoute component={Home} />
                       <Route path="/about" component={About} />
+                      <Route path="/members" component={ListView} />
                     </Route>
                   </Router>
                 </Provider>, document.getElementById("xof"));
