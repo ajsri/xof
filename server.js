@@ -15,6 +15,7 @@ var app = express();
 // mongoose.connect("mongodb://localhost:27017/xof");
 
 const mongoUrl = "mongodb://localhost:27017/xof";
+const mongo = require("mongodb");
 const mongoClient = require("mongodb").MongoClient;
 
 app.use(bodyParser.json());
@@ -65,7 +66,22 @@ app.get("/members", function(req, res) {
     else{
       var users = db.collection("members").find().toArray(function(err, docs) {
         res.json(docs);
-        db.close()
+        db.close();
+      });
+    }
+  })
+})
+
+app.get("/members/:id", function(req, res) {
+  mongoClient.connect(mongoUrl, function(err, db){
+    if(err){
+      throw err;
+    }
+    else{
+      var id = new mongo.ObjectId(req.params.id);
+      var user = db.collection("members").findOne({"_id": id}, function(err, user){
+        res.json(user);
+        db.close();
       });
     }
   })
